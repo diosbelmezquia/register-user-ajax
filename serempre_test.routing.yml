@@ -1,0 +1,31 @@
+serempre_test.admin_serempre:
+  path: '/admin/serempre'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+    _title: 'Serempre'
+  requirements:
+    _permission: 'serempre admin'
+
+serempre_test.admin_user_register:
+  path: '/admin/user/register'
+  defaults:
+    _form: '\Drupal\serempre_test\Form\UserRegister'
+    _title: 'User registration'
+  requirements:
+    _permission: 'user register'
+
+serempre_test.admin_user_query:
+  path: '/admin/user/query'
+  defaults:
+    _controller: '\Drupal\serempre_test\Controller\UserController::showUsers'
+    _title: 'User query'
+  requirements:
+    _permission: 'user query'
+
+serempre_test.admin_user_import:
+  path: '/admin/user/import'
+  defaults:
+    _form: '\Drupal\serempre_test\Form\UserImport'
+    _title: 'User import'
+  requirements:
+    _permission: 'user import'

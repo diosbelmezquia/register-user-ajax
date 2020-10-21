@@ -1,0 +1,4 @@
+services:
+  serempre_test.user_manager:
+    class: Drupal\serempre_test\UserConnectionManager
+    arguments: ['@database']

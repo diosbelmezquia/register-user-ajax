@@ -1,0 +1,12 @@
+serempre_test.user_validate:
+  version: 1.x
+  css:
+    theme:
+      https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css: { type: external, minified: true }
+  js:
+    https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js: { type: external, minified: true }
+    https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.min.js: { type: external, minified: true }
+    js/serempre_test.user_validate.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once

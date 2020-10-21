@@ -1,0 +1,43 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Entity\EntityInterface;
+
+/**
+ * Implements hook_theme().
+ */
+function serempre_test_theme() {
+  return [
+    'user_modal_register' => [
+      'variables' => [
+        'user_id' => '',
+        'user_name' => ''
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function serempre_test_form_user_login_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $form['#submit'][] = 'serempre_test_register_log_access';
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function serempre_test_register_log_access(&$form, FormStateInterface $form_state) {
+  // Get user manager.
+  $user_manager = \Drupal::service('serempre_test.user_manager');
+  $user_manager->createUserLogger('login');
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_insert().
+ */
+function serempre_test_user_insert(EntityInterface $entity) {
+  // Get user manager.
+  $user_manager = \Drupal::service('serempre_test.user_manager');
+  $user_manager->createUserLogger('register');
+}

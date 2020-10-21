@@ -1,0 +1,67 @@
++<?php
+
+/**
+ * Implements hook_schema().
+ */
+function serempre_test_schema() {
+  $schema['myusers'] = [
+    'description' => 'Table myusers.',
+    'fields' => [
+      'id' => [
+        'description' => 'The user record id',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'name' => [
+        'description' => 'The identifier of the data.',
+        'type' => 'varchar_ascii',
+        'length' => 5,
+        'not null' => TRUE,
+      ],
+    ],
+    'primary key' => ['id'],
+  ];
+
+  $schema['serempre_access_log'] = [
+    'description' => 'Table log.',
+    'fields' => [
+      'date' => [
+        'description' => 'The Unix timestamp.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'id' => [
+        'description' => 'The row id',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'uid' => [
+        'description' => 'The user id.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'ip' => [
+        'description' => 'Client IP',
+        'type' => 'varchar_ascii',
+        'length' => 50,
+        'default' => '',
+      ],
+      'log_type' => [
+        'description' => 'Log type',
+        'type' => 'varchar_ascii',
+        'length' => 25,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+    ],
+    'primary key' => ['id'],
+  ];
+
+  return $schema;
+}

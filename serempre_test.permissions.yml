@@ -1,0 +1,11 @@
+serempre admin:
+  title: 'Serempre admin'
+
+user register:
+  title: 'Registar un usuario'
+
+user query:
+  title: 'Consultar listado de usuarios'
+
+user import:
+  title: 'Importar listado de usuarios'

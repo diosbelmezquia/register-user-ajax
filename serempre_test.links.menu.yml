@@ -1,0 +1,27 @@
+serempre_test.admin_serempre:
+  title: Serempre
+  description: 'Serempre menu'
+  route_name: serempre_test.admin_serempre
+  parent: system.admin
+  weight: -50
+
+serempre_test.admin_user_register:
+  title: Register
+  description: 'User registration'
+  route_name: serempre_test.admin_user_register
+  parent: serempre_test.admin_serempre
+  weight: 5
+
+serempre_test.admin_user_query:
+  title: Query
+  description: 'User query'
+  route_name: serempre_test.admin_user_query
+  parent: serempre_test.admin_serempre
+  weight: 10
+
+serempre_test.admin_user_import:
+  title: Import
+  description: 'User import'
+  route_name: serempre_test.admin_user_import
+  parent: serempre_test.admin_serempre
+  weight: 15
